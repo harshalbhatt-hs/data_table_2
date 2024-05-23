@@ -820,10 +820,7 @@ class PaginatedDataTable2State extends State<PaginatedDataTable2> {
     final List<Widget> footerWidgets = <Widget>[];
 
     if (widget.onRowsPerPageChanged != null) {
-      final List<Widget> availableRowsPerPage = widget.availableRowsPerPage
-          .where((int value) =>
-              value == _effectiveRowsPerPage)
-          .map<DropdownMenuItem<int>>((int value) {
+      final List<Widget> availableRowsPerPage = widget.availableRowsPerPage.map<DropdownMenuItem<int>>((int value) {
         return DropdownMenuItem<int>(
           value: value,
           child: Text('$value'),
